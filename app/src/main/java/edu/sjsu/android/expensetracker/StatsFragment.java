@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -95,11 +96,15 @@ public class StatsFragment extends Fragment {
     private void setIDs() {
         lineChart = getActivity().findViewById(R.id.line_chart);
         db = new Database(this.getContext());
+
+        horBarChart = getActivity().findViewById(R.id.bar_chart);
+        db = new Database(this.getContext());
     }
 
     private void displayContent() {
 
         displayCubicLineChart();
+        displayHorizontalGraph();
     }
 
     private void displayCubicLineChart() {
@@ -129,15 +134,17 @@ public class StatsFragment extends Fragment {
         lineDataSet.setColors(ColorTemplate.PASTEL_COLORS);
         lineChart.setData(data);
         lineChart.animateXY(1000, 1000);
+        TextView headerText = getActivity().findViewById(R.id.weekly_expenses);
+        headerText.setText("Weekly Expenses by Category");
     }
 
-    /*private void displayHorizontalGraph() {
+    private void displayHorizontalGraph() {
 
-        ArrayList<String> categories = db.getTodaysExpenseCategories();
+        ArrayList<String> categories = db.getWeeksExpenseCategories();
 
         ArrayList<BarEntry> amounts = new ArrayList<>();
         for (int i = 0; i < categories.size(); i++) {
-            long amount = db.getTodaysExpenseAmountByCategory(categories.get(i));
+            long amount = db.getWeeksExpenseAmountByCategory(categories.get(i));
             amounts.add(new BarEntry(amount, i));
         }
 
@@ -162,8 +169,10 @@ public class StatsFragment extends Fragment {
         BarData data = new BarData(categories, bardataset);
         bardataset.setColors(ColorTemplate.PASTEL_COLORS);
         horBarChart.setData(data);
+        TextView headerText = getActivity().findViewById(R.id.daily_expenses);
+        headerText.setText("Daily Expenses by Category");
     }
-*/
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -210,3 +219,4 @@ public class StatsFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 }
+
