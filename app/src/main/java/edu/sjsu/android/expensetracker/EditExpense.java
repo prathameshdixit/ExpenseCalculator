@@ -1,5 +1,6 @@
 package edu.sjsu.android.expensetracker;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -8,6 +9,7 @@ import android.text.InputFilter;
 import android.text.Spanned;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -17,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.DecimalFormat;
+import java.util.Calendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -31,12 +34,45 @@ public class EditExpense extends AppCompatActivity {
     private boolean isNewExpense;
     private ExpenseClass expense;
 
+    private EditText mEditText;
+
+
+    private DatePickerDialog.OnDateSetListener mOnDateSetListener = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            // Set the selected date in the EditText field
+            String selectedDate = dayOfMonth + "/" + (monthOfYear+1) + "/" + year;
+            mEditText.setText(selectedDate);
+        }
+    };
+
+    private void showDatePicker() {
+        // Get the current date
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        // Show the DatePickerDialog
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, mOnDateSetListener, year, month, day);
+        datePickerDialog.show();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         applyTheme();
 
         setContentView(R.layout.expense_activity);
+
+        mEditText = findViewById(R.id.myEditText);
+        mEditText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePicker();
+            }
+        });
+
 
         getExpenseID();
         setIDs();
