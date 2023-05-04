@@ -21,14 +21,17 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
     private BottomNavigationView navigation;
     private FragmentManager manager;
 
+    private int selectedItemId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         applyTheme();
-        setContentView(R.layout.main_activity);
 
+        setContentView(R.layout.main_activity);
         makeBottomNavBar();
+
 
     }
 
@@ -62,34 +65,80 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
                 Toast.makeText(this, "No theme", Toast.LENGTH_SHORT).show();
                 break;
         }
+
     }
 
     private void makeBottomNavBar() {
         manager = getSupportFragmentManager();
         navigation = findViewById(R.id.navigation);
-        navigation.setSelectedItemId(R.id.navigation_home);
-        manager.beginTransaction().replace(R.id.frame_layout, new HomeFragment()).commit();
+
+        // Retrieve the ID of the selected item from SharedPreferences
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        int selectedItemId = preferences.getInt("selectedItemId", R.id.navigation_home);
+        navigation.setSelectedItemId(selectedItemId);
+
+        System.out.println(selectedItemId);
+
+//        if (selectedItemId ) {
+//            manager.beginTransaction().replace(R.id.frame_layout, new HomeFragment()).commit();
+//
+//        }
+
+//        manager.beginTransaction().replace(R.id.frame_layout, new HomeFragment()).commit();
+
+
+        System.out.println(selectedItemId);
+
+        boolean x = navigate(selectedItemId);
+
+//        manager.beginTransaction().replace(R.id.frame_layout, new HomeFragment()).commit();
+
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()) {
-                    case R.id.navigation_history:
-                        manager.beginTransaction().replace(R.id.frame_layout, new HistoryFragment()).commit();
-                        return true;
-                    case R.id.navigation_home:
-                        manager.beginTransaction().replace(R.id.frame_layout, new HomeFragment(), "Home").commit();
-                        return true;
-                    case R.id.navigation_stats:
-                        manager.beginTransaction().replace(R.id.frame_layout, new StatsFragment()).commit();
-                        return true;
-                    case R.id.navigation_settings:
-                        startActivity(new Intent(MainActivity.this, SettingsActivity.class));
-                        finish();
-                        return true;
-                }
-                return false;
+                return navigate(menuItem.getItemId());
             }
         });
+    }
+
+    public boolean navigate(int itemId) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        Fragment currentFragment = manager.findFragmentById(R.id.frame_layout);
+        Fragment selectedFragment = null;
+
+        switch (itemId) {
+            case R.id.navigation_history:
+                selectedFragment = new HistoryFragment();
+                break;
+            case R.id.navigation_home:
+                selectedFragment = new HomeFragment();
+                break;
+            case R.id.navigation_stats:
+                selectedFragment = new StatsFragment();
+                break;
+            case R.id.navigation_settings:
+                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+                finish();
+                return true;
+            default:
+                selectedFragment = new HomeFragment();
+                break;
+        }
+
+        if (selectedFragment != null) {
+            if (currentFragment != null && currentFragment.getClass().equals(selectedFragment.getClass())) {
+                // Reload fragment if it is already displayed
+                manager.beginTransaction().detach(currentFragment).attach(currentFragment).commit();
+            } else {
+                // Replace fragment
+                manager.beginTransaction().replace(R.id.frame_layout, selectedFragment).commit();
+            }
+
+            // Save the ID of the selected item in SharedPreferences
+            preferences.edit().putInt("selectedItemId", itemId).apply();
+        }
+
+        return true;
     }
 
     @Override

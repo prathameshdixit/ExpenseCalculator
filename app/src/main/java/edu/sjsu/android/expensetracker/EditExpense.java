@@ -1,5 +1,6 @@
 package edu.sjsu.android.expensetracker;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.Spanned;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -66,6 +68,8 @@ public class EditExpense extends AppCompatActivity {
         setContentView(R.layout.expense_activity);
 
         mEditText = findViewById(R.id.myEditText);
+        hideKeyboard(mEditText); // Hide the keyboard
+
         mEditText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,6 +82,11 @@ public class EditExpense extends AppCompatActivity {
         setIDs();
         displayContent();
         onClickListeners();
+    }
+
+    private void hideKeyboard(View view) {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
     private void applyTheme() {
 
