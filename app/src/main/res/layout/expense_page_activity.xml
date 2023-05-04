@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".ShowExpense">
 
     <TextView
         android:id="@+id/expense_category_textview"
         style="@style/TextLargeHeading"
         android:layout_width="match_parent"
-        android:layout_margin="20dp"
-        android:padding="10dp"
+        android:textFontWeight="600"
         android:textAlignment="center"
         android:text="category"
-        android:textSize="25sp"
+        android:textSize="60dp"
         tools:ignore="MissingConstraints" />
 
     <TextView

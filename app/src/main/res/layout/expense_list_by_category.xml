@@ -10,8 +10,9 @@
         style="@style/ProgressBar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        />
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         style="@style/Toolbar"
@@ -29,49 +30,58 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/rect_elevation"
-        android:padding="10dp"
+        android:layout_margin="16dp"
+        android:padding="16dp"
         >
 
         <TextView
             android:id="@+id/expense_category_list_top_layout_total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Today total: 100"
+            android:layout_marginLeft="4dp"
+            android:fontFamily="@font/roboto_bold"
             android:padding="10dp"
-            android:textSize="20sp"
+            android:text="Today total: 100"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@id/expense_category_list_top_layout_image"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/expense_category_list_top_layout_image"/>
+            app:layout_constraintVertical_bias="0.048" />
 
         <ImageView
             android:id="@+id/expense_category_list_top_layout_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_label_black_24dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="16dp"
             android:padding="20dp"
+            android:src="@drawable/ic_label_black_24dp"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/expense_category_list_top_layout_items"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Items : 5"
+            android:layout_marginLeft="4dp"
+            android:fontFamily="@font/roboto_bold"
             android:padding="10dp"
+            android:text="Items : 5"
             android:textSize="20sp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/expense_category_list_top_layout_total"/>
+            app:layout_constraintTop_toBottomOf="@id/expense_category_list_top_layout_total" />
 
         <TextView
             android:id="@+id/expense_category_list_top_layout_budget"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Budget : 500"
+            android:layout_marginLeft="4dp"
+            android:fontFamily="@font/roboto_bold"
             android:padding="10dp"
+            android:text="Budget : 500"
             android:textSize="20sp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/expense_category_list_top_layout_items"/>
+            app:layout_constraintTop_toBottomOf="@id/expense_category_list_top_layout_items" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -80,6 +90,7 @@
         style="@style/ListWithBottomNavBar.SimpleList"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
+        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

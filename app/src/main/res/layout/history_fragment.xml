@@ -6,7 +6,16 @@
     android:id="@+id/history_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".HistoryFragment">
+
+    <TextView
+        android:id="@+id/historyTitle"
+        android:text="History"
+        android:textSize="60dp"
+        android:fontFamily="@font/roboto_bold"
+        style="@style/ListWithBottomNavBar"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/no_expense_textview"
@@ -26,8 +35,10 @@
         android:id="@+id/expense_list"
         style="@style/ListWithBottomNavBar"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/historyTitle"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.view.animation.TranslateAnimation;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -57,7 +58,7 @@ public class HomeFragment extends Fragment {
     private TodayListAdapter adapter;
     private ListView categoryListViewID;
     private TextView totalAmountID, totalItems, noExpense;
-    private ImageView categoryButton;
+    private Button categoryButton;
     private ProgressBar progressBar;
     private Database db;
     private FragmentActivity mActivity;
