@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
 public class ShowExpense extends AppCompatActivity {
 
     TextView amountID, categoryID, dateID, noteID;
