@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -86,6 +87,9 @@ public class Database extends SQLiteOpenHelper {
         values.put(COLUMN_AMOUNT, expense.getmAmount());
         values.put(COLUMN_CATEGORY_ID, categoryID);
         values.put(COLUMN_NOTE, expense.getmNote());
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
+        values.put(COLUMN_TIMESTAMP, df.format(date));
         // insert row
         long id = db.insert(TABLE_NAME, null, values);
 
