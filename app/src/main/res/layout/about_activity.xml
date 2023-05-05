@@ -7,6 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".AboutActivity">
 
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         style="@style/Toolbar"
@@ -17,11 +18,201 @@
         app:navigationIcon="?attr/homeAsUpIndicator"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:text="About Activity"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
+    <ImageView
+        android:id="@+id/icon1"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="24dp"
+        android:elevation="10dp"
+        android:background="@drawable/shadow"
+        android:contentDescription="Prof. Yan Chen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:src="@drawable/img1" />
+
+    <TextView
+        android:id="@+id/name1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="nunito_bold"
+        android:textColor="@color/teal_200"
+        android:text="Prof. Yan Chen"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/icon1"
+        app:layout_constraintTop_toTopOf="@+id/icon1" />
+    <TextView
+        android:id="@+id/desc1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="35dp"
+        android:layout_marginStart="32dp"
+        android:text="Instructor"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/icon1"
+        app:layout_constraintTop_toTopOf="@+id/name1" />
+
+    <ImageView
+        android:id="@+id/icon2"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="24dp"
+        android:elevation="10dp"
+        android:background="@drawable/shadow"
+        android:contentDescription="Likhit"
+        app:layout_constraintStart_toStartOf="@+id/icon1"
+        app:layout_constraintTop_toBottomOf="@+id/icon1"
+        tools:srcCompat="@drawable/img2" />
+
+    <TextView
+        android:id="@+id/name2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="35dp"
+        android:layout_marginStart="32dp"
+        android:fontFamily="nunito_bold"
+        android:textColor="@color/teal_200"
+        android:text="Likhit Nemani"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/icon2"
+        app:layout_constraintTop_toTopOf="@+id/icon2"
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/desc2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="35dp"
+        android:layout_marginStart="32dp"
+        android:text="Student, Developer"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/icon2"
+        app:layout_constraintTop_toTopOf="@+id/name2" />
+    <ImageView
+        android:id="@+id/icon3"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="24dp"
+        android:elevation="10dp"
+        android:background="@drawable/shadow"
+        android:contentDescription="Dania"
+        app:layout_constraintStart_toStartOf="@+id/icon2"
+        app:layout_constraintTop_toBottomOf="@+id/icon2"
+        tools:srcCompat="@drawable/img3" />
+
+    <TextView
+        android:id="@+id/name3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="35dp"
+        android:layout_marginStart="32dp"
+        android:fontFamily="nunito_bold"
+        android:textColor="@color/teal_200"
+        android:text="Dania Jaison"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/icon3"
+        app:layout_constraintTop_toTopOf="@+id/icon3" />
+    <TextView
+        android:id="@+id/desc3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="35dp"
+        android:layout_marginStart="32dp"
+        android:text="Student, Developer"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/icon3"
+        app:layout_constraintTop_toTopOf="@+id/name3" />
+    <ImageView
+        android:id="@+id/icon4"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/icon5"
+        android:layout_marginTop="24dp"
+        android:elevation="10dp"
+        android:background="@drawable/shadow"
+        android:contentDescription="Navneeth"
+        app:layout_constraintStart_toStartOf="@+id/icon3"
+        app:layout_constraintTop_toBottomOf="@+id/icon3"
+        tools:srcCompat="@drawable/img4" />
+
+    <TextView
+        android:id="@+id/name4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="35dp"
+        android:layout_marginStart="32dp"
+        android:fontFamily="nunito_bold"
+        android:textColor="@color/teal_200"
+        android:text="Navneeth Nivol"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/icon4"
+        app:layout_constraintTop_toTopOf="@+id/icon4" />
+    <TextView
+        android:id="@+id/desc4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="35dp"
+        android:layout_marginStart="32dp"
+        android:text="Student, Developer"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/icon4"
+        app:layout_constraintTop_toTopOf="@+id/name4" />
+
+    <ImageView
+        android:id="@+id/icon5"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="24dp"
+        android:elevation="10dp"
+        android:background="@drawable/shadow"
+        android:contentDescription="Prathamesh"
+        app:layout_constraintStart_toStartOf="@+id/icon4"
+        app:layout_constraintTop_toBottomOf="@+id/icon4"
+        tools:srcCompat="@drawable/img5" />
+
+    <TextView
+        android:id="@+id/name5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="35dp"
+        android:layout_marginStart="32dp"
+        android:fontFamily="nunito_bold"
+        android:textColor="@color/teal_200"
+        android:text="Prathamesh Dixit"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/icon5"
+        app:layout_constraintTop_toTopOf="@+id/icon5"/>
+    <TextView
+        android:id="@+id/desc5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="35dp"
+        android:layout_marginStart="32dp"
+        android:text="Student, Developer"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/icon5"
+        app:layout_constraintTop_toTopOf="@+id/name5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

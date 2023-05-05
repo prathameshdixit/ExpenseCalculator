@@ -17,11 +17,60 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+
+    <ImageView
+        android:id="@+id/icon7"
+        android:layout_width="112dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/shadow"
+        android:elevation="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/img7" />
+
     <TextView
-        android:text="Help Activity"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:id="@+id/name6"
+        android:layout_width="224dp"
+        android:layout_height="96dp"
+        android:layout_gravity="center"
+        android:layout_margin="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/shadow"
+        android:elevation="30dp"
+        android:text="The expense calculating app allows users to track and manage their expenses in a simple and intuitive way. Users can input their expenses, categorize them, and generate reports to gain insights into their spending habits. With features like automated categorization, the app streamlines the process of expense management."
+        android:textColor="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/icon7"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <ImageView
+        android:id="@+id/icon6"
+        android:layout_width="133dp"
+        android:layout_height="102dp"
+
+        android:elevation="20dp"
+        android:layout_marginTop="55dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icon7"
+        app:srcCompat="@drawable/img6" />
+
+    <EditText
+        android:id="@+id/name7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow"
+        android:elevation="20dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:textColor="@color/red"
+
+        android:text="cs175team9@gmail.com"
+        app:layout_constraintStart_toEndOf="@+id/icon6"
+        app:layout_constraintTop_toBottomOf="@+id/name6" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
