@@ -91,6 +91,8 @@ public class Database extends SQLiteOpenHelper {
         Date date = new Date();
         values.put(COLUMN_TIMESTAMP, df.format(date));
         // insert row
+//        values.put(COLUMN_TIMESTAMP, df.format(expense.getmDate()));
+
         long id = db.insert(TABLE_NAME, null, values);
 
         // close db connection
