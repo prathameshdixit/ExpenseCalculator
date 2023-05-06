@@ -18,17 +18,26 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.datepicker.MaterialDatePicker;
+import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class EditExpense extends AppCompatActivity {
 
     private FloatingActionButton fab;
-    private EditText amountID,noteID;
+    private EditText amountID;
+
+    private TextInputEditText noteID;
     private Database db;
     private long id;
     private ImageButton closeButtonID;
@@ -36,29 +45,11 @@ public class EditExpense extends AppCompatActivity {
     private boolean isNewExpense;
     private ExpenseClass expense;
 
-    private EditText mEditText;
+    private static final String DATE_FORMAT = "dd MMMM yyyy";
 
+    TextInputEditText date;
 
-    private DatePickerDialog.OnDateSetListener mOnDateSetListener = new DatePickerDialog.OnDateSetListener() {
-        @Override
-        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-            // Set the selected date in the EditText field
-            String selectedDate = dayOfMonth + "/" + (monthOfYear+1) + "/" + year;
-            mEditText.setText(selectedDate);
-        }
-    };
-
-    private void showDatePicker() {
-        // Get the current date
-        Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH);
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
-
-        // Show the DatePickerDialog
-        DatePickerDialog datePickerDialog = new DatePickerDialog(this, mOnDateSetListener, year, month, day);
-        datePickerDialog.show();
-    }
+    private Calendar selectedDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,17 +58,39 @@ public class EditExpense extends AppCompatActivity {
 
         setContentView(R.layout.expense_activity);
 
-        mEditText = findViewById(R.id.myEditText);
-        hideKeyboard(mEditText); // Hide the keyboard
+        date = findViewById(R.id.btnPickDate);
 
-        mEditText.setOnClickListener(new View.OnClickListener() {
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        date.setText(dateFormat.format(calendar.getTime()));
+        System.out.println(dateFormat.format(calendar.getTime()));
+        date.setKeyListener(null);
+
+
+        Button btnPickDate = findViewById(R.id.date_picker);
+        btnPickDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDatePicker();
+                MaterialDatePicker.Builder<Long> builder = MaterialDatePicker.Builder.datePicker();
+                builder.setTitleText("Pick a date");
+                MaterialDatePicker<Long> datePicker = builder.build();
+
+                datePicker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener<Long>() {
+                    @Override
+                    public void onPositiveButtonClick(Long selection) {
+                        selectedDate = Calendar.getInstance();
+                        selectedDate.setTimeInMillis(selection + 86400000);
+
+                        System.out.println(selectedDate);
+                        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+                        date.setText(dateFormat.format(selectedDate.getTime()));
+                    }
+                });
+
+                datePicker.show(getSupportFragmentManager(), "datePicker");
             }
         });
-
-
         getExpenseID();
         setIDs();
         displayContent();
@@ -144,10 +157,12 @@ public class EditExpense extends AppCompatActivity {
                     if(category.equals("Category")){
                         category = "others";
                     }
-                    String note= noteID.getText().toString();//Note will be stored as string
+                    String note= noteID.getText().toString();
                     expense.setmAmount(amount);
                     expense.setmCategory(category);
                     expense.setmNote(note);
+                    expense.setmDate(date.toString());
+                    System.out.println("date = " + date);
                     if (isNewExpense) {
                         id = db.addExpense(expense);
                         expense.setmID(id);

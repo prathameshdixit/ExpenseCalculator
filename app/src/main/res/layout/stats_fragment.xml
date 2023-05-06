@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".StatsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -11,9 +12,11 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/no_expense_textview"
-            style="@style/NoDataCaseView"
-            android:text="No Expenses"
+            android:id="@+id/statsTitle"
+            android:text="Statistics"
+            android:textSize="60dp"
+            android:fontFamily="@font/roboto_bold"
+            style="@style/ListWithBottomNavBar"
             tools:ignore="MissingConstraints" />
 
         <ProgressBar
@@ -29,20 +32,18 @@
             style="@style/GraphViewHeaders"
             android:layout_width="357dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="92dp"
+            android:layout_marginTop="20dp"
             android:textColor="@color/medium_maroon"
-            app:layout_constraintHorizontal_bias="0.444"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/statsTitle" />
 
         <com.github.mikephil.charting.charts.LineChart
             android:id="@+id/line_chart"
+            style="@style/GraphStyle"
             android:layout_width="357dp"
             android:layout_height="221dp"
-            android:layout_marginStart="24dp"
-            style="@style/GraphStyle"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/weekly_expenses"
             app:layout_constraintTop_toBottomOf="@+id/weekly_expenses"></com.github.mikephil.charting.charts.LineChart>
 
         <TextView
@@ -55,6 +56,7 @@
             app:layout_constraintHorizontal_bias="0.444"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/line_chart"
             app:layout_constraintTop_toBottomOf="@id/line_chart" />
 
         <com.github.mikephil.charting.charts.HorizontalBarChart
@@ -62,10 +64,14 @@
             style="@style/GraphStyle"
             android:layout_width="357dp"
             android:layout_height="221dp"
-            android:layout_marginStart="24dp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/daily_expenses"
             app:layout_constraintTop_toBottomOf="@+id/daily_expenses">
 
+            <TextView
+                android:id="@+id/no_expense_textview"
+                style="@style/NoDataCaseView"
+                android:text="No Expenses"
+                tools:ignore="MissingConstraints" />
         </com.github.mikephil.charting.charts.HorizontalBarChart>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
