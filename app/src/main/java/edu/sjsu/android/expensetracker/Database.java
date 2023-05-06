@@ -90,9 +90,8 @@ public class Database extends SQLiteOpenHelper {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();
         values.put(COLUMN_TIMESTAMP, df.format(date));
-        // insert row
-//        values.put(COLUMN_TIMESTAMP, df.format(expense.getmDate()));
 
+        // insert row
         long id = db.insert(TABLE_NAME, null, values);
 
         // close db connection

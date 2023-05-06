@@ -45,12 +45,6 @@ public class EditExpense extends AppCompatActivity {
     private boolean isNewExpense;
     private ExpenseClass expense;
 
-    private static final String DATE_FORMAT = "dd MMMM yyyy";
-
-    TextInputEditText date;
-
-    private Calendar selectedDate;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,49 +52,12 @@ public class EditExpense extends AppCompatActivity {
 
         setContentView(R.layout.expense_activity);
 
-        date = findViewById(R.id.btnPickDate);
-
-        Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-        date.setText(dateFormat.format(calendar.getTime()));
-        System.out.println(dateFormat.format(calendar.getTime()));
-        date.setKeyListener(null);
-
-
-        Button btnPickDate = findViewById(R.id.date_picker);
-        btnPickDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MaterialDatePicker.Builder<Long> builder = MaterialDatePicker.Builder.datePicker();
-                builder.setTitleText("Pick a date");
-                MaterialDatePicker<Long> datePicker = builder.build();
-
-                datePicker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener<Long>() {
-                    @Override
-                    public void onPositiveButtonClick(Long selection) {
-                        selectedDate = Calendar.getInstance();
-                        selectedDate.setTimeInMillis(selection + 86400000);
-
-                        System.out.println(selectedDate);
-                        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
-                        date.setText(dateFormat.format(selectedDate.getTime()));
-                    }
-                });
-
-                datePicker.show(getSupportFragmentManager(), "datePicker");
-            }
-        });
         getExpenseID();
         setIDs();
         displayContent();
         onClickListeners();
     }
 
-    private void hideKeyboard(View view) {
-        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
-        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
-    }
     private void applyTheme() {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this );
@@ -161,8 +118,6 @@ public class EditExpense extends AppCompatActivity {
                     expense.setmAmount(amount);
                     expense.setmCategory(category);
                     expense.setmNote(note);
-                    expense.setmDate(date.toString());
-                    System.out.println("date = " + date);
                     if (isNewExpense) {
                         id = db.addExpense(expense);
                         expense.setmID(id);

@@ -38,24 +38,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/amount_edittext" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/btnPickDate_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:hint="Date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_picker"
-        tools:ignore="MissingClass,MissingConstraints">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/btnPickDate"
-            android:layout_width="364dp"
-            android:layout_height="wrap_content"
-            android:maxLines="1" />
-
-    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/addnote_edittext_layout"
@@ -65,7 +47,7 @@
         android:hint="Add Notes"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPickDate_layout"
+        app:layout_constraintTop_toBottomOf="@+id/category_list_imagebutton"
         tools:ignore="MissingClass,MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -75,35 +57,11 @@
             android:lines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
-<!--    <EditText-->
-<!--        android:id="@+id/addnote_edittext"-->
-<!--        style="@style/EditText"-->
-<!--        android:layout_width="367dp"-->
-<!--        android:layout_height="39dp"-->
-<!--        android:layout_marginLeft="20dp"-->
-<!--        android:layout_marginTop="24dp"-->
-<!--        android:layout_marginRight="20dp"-->
-<!--        android:hint="AddNote"-->
-<!--        app:layout_constraintLeft_toLeftOf="parent"-->
-<!--        app:layout_constraintRight_toRightOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/btnPickDate_layout" />-->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addfab"
         style="@style/CheckFloatingActionButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
-
-    <Button
-        android:id="@+id/date_picker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_weight="1"
-        android:drawableLeft="@drawable/date"
-        android:text="Pick a date"
-        app:layout_constraintStart_toStartOf="@+id/btnPickDate_layout"
-        app:layout_constraintTop_toBottomOf="@+id/category_list_imagebutton"
-        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
