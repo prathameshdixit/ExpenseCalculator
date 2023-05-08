@@ -283,8 +283,39 @@ public class Database extends SQLiteOpenHelper {
         ArrayList<String> categories = new ArrayList<>();
 
         // Select All Query
-        String selectQuery = "SELECT DISTINCT " + COLUMN_CATEGORY_ID + " FROM " + TABLE_NAME + " WHERE " + " datetime (" + COLUMN_TIMESTAMP +
-                ") >= " + " datetime('now', 'weekday 1', '-7 days')" + " ORDER BY " + COLUMN_TIMESTAMP + " DESC ";
+        String selectQuery = "SELECT DISTINCT " + COLUMN_CATEGORY_ID + " FROM " +
+                TABLE_NAME + " WHERE " + " datetime (" + COLUMN_TIMESTAMP +
+                ") >= " + " datetime('now', 'weekday 1', '-7 days')" +
+                " ORDER BY " + COLUMN_TIMESTAMP + " DESC;";
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                String category;
+                category = getCategoryByID(cursor.getLong(cursor.getColumnIndex(COLUMN_CATEGORY_ID)));
+                categories.add(category);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        // close db connection
+        db.close();
+
+        // return notes list
+        return categories;
+    }
+
+    @SuppressLint("Range")
+    public ArrayList<String> getDailyExpenseCategories() {
+
+        ArrayList<String> categories = new ArrayList<>();
+        // Select All Query
+        String selectQuery = "SELECT DISTINCT " + COLUMN_CATEGORY_ID + " FROM "
+                + TABLE_NAME + " WHERE " + " date (" + COLUMN_TIMESTAMP
+                + ") = " + " date('now')" +
+                " ORDER BY " + COLUMN_TIMESTAMP + " DESC;";
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
@@ -459,8 +490,37 @@ public class Database extends SQLiteOpenHelper {
         long totAmn = 0;
 
         // Select All Query
-        String selectQuery = "SELECT " + " SUM(" + COLUMN_AMOUNT + ") as TOTAL FROM " + TABLE_NAME + " WHERE " + " datetime (" + COLUMN_TIMESTAMP +
-                ") >= " + " datetime('now', 'weekday 1', '-7 days')" + "AND " + COLUMN_CATEGORY_ID + " = '" + getCategoryID(category) + "'";
+        String selectQuery = "SELECT " + " SUM(" + COLUMN_AMOUNT + ") as TOTAL FROM "
+                + TABLE_NAME + " WHERE " + " datetime (" + COLUMN_TIMESTAMP +
+                ") >= " + " datetime('now', 'weekday 1', '-7 days')" + "AND "
+                + COLUMN_CATEGORY_ID + " = '" + getCategoryID(category) + "';";
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                totAmn = cursor.getInt(cursor.getColumnIndex("TOTAL"));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        // close db connection
+        db.close();
+
+        return totAmn;
+    }
+
+    @SuppressLint("Range")
+    public long getDailyExpenseAmountByCategory(String category) {
+
+        long totAmn = 0;
+
+        // Select All Query
+        String selectQuery = "SELECT " + " SUM(" + COLUMN_AMOUNT + ") as TOTAL FROM "
+                + TABLE_NAME + " WHERE " + " date (" + COLUMN_TIMESTAMP +
+                ") = " + " date('now')" + "AND "
+                + COLUMN_CATEGORY_ID + " = '" + getCategoryID(category) + "';";
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);

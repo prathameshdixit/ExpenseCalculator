@@ -140,11 +140,10 @@ public class StatsFragment extends Fragment {
 
     private void displayHorizontalGraph() {
 
-        ArrayList<String> categories = db.getWeeksExpenseCategories();
-
+        ArrayList<String> categories = db.getDailyExpenseCategories();
         ArrayList<BarEntry> amounts = new ArrayList<>();
         for (int i = 0; i < categories.size(); i++) {
-            long amount = db.getWeeksExpenseAmountByCategory(categories.get(i));
+            long amount = db.getDailyExpenseAmountByCategory(categories.get(i));
             amounts.add(new BarEntry(amount, i));
         }
 
