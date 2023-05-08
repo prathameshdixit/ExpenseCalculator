@@ -144,7 +144,6 @@ public class CategoryActivity extends AppCompatActivity {
                         }
                         else{
                             String iconName = getResources().getResourceEntryName(icon);
-                            Toast.makeText(CategoryActivity.this, iconName, Toast.LENGTH_SHORT).show();
                             saveCategory(categoryName.getText().toString(),budget,iconName);
                         }
                     }
