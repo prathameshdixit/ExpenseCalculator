@@ -16,13 +16,14 @@ public class HelpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        applyTheme();
         setContentView(R.layout.help_activity);
         ImageView icon6 = findViewById(R.id.icon6);
         icon6.setImageResource(R.drawable.img6);
         ImageView icon7 = findViewById(R.id.icon7);
         icon6.setImageResource(R.drawable.img7);
-        applyTheme();
-        setContentView(R.layout.about_activity);
+        setContentView(R.layout.help_activity);
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

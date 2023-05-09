@@ -150,7 +150,7 @@ public class HomeFragment extends Fragment {
                 } else {
                     noExpense.setVisibility(View.INVISIBLE);
                 }
-                totalItems.setText((R.string.item) + totalItemCount );
+                totalItems.setText(getString(R.string.item) + "" + totalItemCount );
                 categoryListViewID.setAdapter(adapter);
             }
         }

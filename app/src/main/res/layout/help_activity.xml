@@ -22,54 +22,47 @@
         android:id="@+id/icon7"
         android:layout_width="112dp"
         android:layout_height="83dp"
-        android:layout_marginTop="45dp"
-        android:background="@drawable/shadow"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
         android:elevation="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:srcCompat="@drawable/img7" />
+        app:srcCompat="@drawable/i_icon" />
 
     <TextView
         android:id="@+id/name6"
-        android:layout_width="224dp"
-        android:layout_height="96dp"
+        android:layout_width="229dp"
+        android:layout_height="193dp"
         android:layout_gravity="center"
         android:layout_margin="35dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/shadow"
+        android:layout_marginTop="28dp"
         android:elevation="30dp"
         android:text="@string/name6"
         android:textColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.388"
         app:layout_constraintStart_toEndOf="@+id/icon7"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <ImageView
         android:id="@+id/icon6"
-        android:layout_width="133dp"
-        android:layout_height="102dp"
-
+        android:layout_width="112dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="172dp"
         android:elevation="20dp"
-        android:layout_marginTop="55dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/icon7"
         app:layout_constraintTop_toBottomOf="@+id/icon7"
-        app:srcCompat="@drawable/img6" />
+        app:srcCompat="@drawable/email" />
 
-    <EditText
+    <TextView
         android:id="@+id/name7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/shadow"
+        android:layout_marginTop="92dp"
         android:elevation="20dp"
-        android:layout_marginTop="95dp"
-        android:layout_marginStart="16dp"
-        android:ems="10"
-        android:textColor="@color/red"
-
         android:text="cs175team9@gmail.com"
-        app:layout_constraintStart_toEndOf="@+id/icon6"
+        android:textColor="@color/red"
+        app:layout_constraintStart_toStartOf="@+id/name6"
         app:layout_constraintTop_toBottomOf="@+id/name6" />
 
 

@@ -28,7 +28,7 @@
     <string name="list_textview_category">Category</string>
     <string name="list_textview_date">Date</string>
     <string name="no_expense_textview">No Expenses</string>
-    <string name="amount_textview">amount</string>
+    <string name="amount_textview">Amount</string>
     <string name="categories_button">Categories</string>
     <string name="statsTitle">Statistics</string>
     <string name="today_list_category">Category</string>
