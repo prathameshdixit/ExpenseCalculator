@@ -39,7 +39,7 @@
         android:layout_marginTop="32dp"
         android:background="@drawable/shadow"
         android:elevation="30dp"
-        android:text="The expense calculating app allows users to track and manage their expenses in a simple and intuitive way. Users can input their expenses, categorize them, and generate reports to gain insights into their spending habits. With features like automated categorization, the app streamlines the process of expense management."
+        android:text="@string/name6"
         android:textColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

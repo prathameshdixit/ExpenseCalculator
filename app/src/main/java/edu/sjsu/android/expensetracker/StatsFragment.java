@@ -135,7 +135,7 @@ public class StatsFragment extends Fragment {
         lineChart.setData(data);
         lineChart.animateXY(1000, 1000);
         TextView headerText = getActivity().findViewById(R.id.weekly_expenses);
-        headerText.setText("Weekly Expenses by Category");
+        headerText.setText(R.string.weekly_expenses);
     }
 
     private void displayHorizontalGraph() {
@@ -169,7 +169,7 @@ public class StatsFragment extends Fragment {
         bardataset.setColors(ColorTemplate.PASTEL_COLORS);
         horBarChart.setData(data);
         TextView headerText = getActivity().findViewById(R.id.daily_expenses);
-        headerText.setText("Daily Expenses by Category");
+        headerText.setText(R.string.daily_expenses);
     }
 
     @Override

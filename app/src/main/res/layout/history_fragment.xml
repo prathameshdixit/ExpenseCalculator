@@ -11,7 +11,7 @@
 
     <TextView
         android:id="@+id/historyTitle"
-        android:text="History"
+        android:text="@string/historyTitle"
         android:textSize="60dp"
         android:fontFamily="@font/roboto_bold"
         style="@style/ListWithBottomNavBar"

@@ -24,7 +24,7 @@
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_marginTop="24dp"
-        android:elevation="10dp"
+        android:elevation="20dp"
         android:background="@drawable/shadow"
         android:contentDescription="Prof. Yan Chen"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +54,7 @@
         android:layout_gravity="center"
         android:layout_margin="35dp"
         android:layout_marginStart="32dp"
-        android:text="Instructor"
+        android:text="@string/desc1"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/icon1"
         app:layout_constraintTop_toTopOf="@+id/name1" />
@@ -64,12 +64,12 @@
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_marginTop="24dp"
-        android:elevation="10dp"
+        android:elevation="20dp"
         android:background="@drawable/shadow"
         android:contentDescription="Likhith Nemani"
         app:layout_constraintStart_toStartOf="@+id/icon1"
         app:layout_constraintTop_toBottomOf="@+id/icon1"
-        tools:srcCompat="@drawable/img2" />
+        tools:srcCompat="@drawable/img3" />
 
     <TextView
         android:id="@+id/name2"
@@ -94,7 +94,7 @@
         android:layout_gravity="center"
         android:layout_margin="35dp"
         android:layout_marginStart="32dp"
-        android:text="Student, Developer"
+        android:text="@string/desc2"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/icon2"
         app:layout_constraintTop_toTopOf="@+id/name2" />
@@ -103,12 +103,12 @@
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_marginTop="24dp"
-        android:elevation="10dp"
+        android:elevation="20dp"
         android:background="@drawable/shadow"
         android:contentDescription="Dania"
         app:layout_constraintStart_toStartOf="@+id/icon2"
         app:layout_constraintTop_toBottomOf="@+id/icon2"
-        tools:srcCompat="@drawable/img3" />
+        tools:srcCompat="@drawable/img2" />
 
     <TextView
         android:id="@+id/name3"
@@ -132,7 +132,7 @@
         android:layout_gravity="center"
         android:layout_margin="35dp"
         android:layout_marginStart="32dp"
-        android:text="Student, Developer"
+        android:text="@string/desc2"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/icon3"
         app:layout_constraintTop_toTopOf="@+id/name3" />
@@ -142,12 +142,12 @@
         android:layout_height="100dp"
         android:layout_above="@+id/icon5"
         android:layout_marginTop="24dp"
-        android:elevation="10dp"
+        android:elevation="20dp"
         android:background="@drawable/shadow"
         android:contentDescription="Navneeth"
         app:layout_constraintStart_toStartOf="@+id/icon3"
         app:layout_constraintTop_toBottomOf="@+id/icon3"
-        tools:srcCompat="@drawable/img4" />
+        tools:srcCompat="@drawable/img3" />
 
     <TextView
         android:id="@+id/name4"
@@ -158,7 +158,7 @@
         android:layout_marginStart="32dp"
         android:fontFamily="nunito_bold"
         android:textColor="@color/teal_200"
-        android:text="Navneeth Nivol"
+        android:text="@string/desc2"
         android:textAppearance="?attr/textAppearanceListItem"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -171,7 +171,7 @@
         android:layout_gravity="center"
         android:layout_margin="35dp"
         android:layout_marginStart="32dp"
-        android:text="Student, Developer"
+        android:text="@string/desc2"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/icon4"
         app:layout_constraintTop_toTopOf="@+id/name4" />
@@ -182,12 +182,12 @@
         android:layout_height="100dp"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="24dp"
-        android:elevation="10dp"
+        android:elevation="20dp"
         android:background="@drawable/shadow"
         android:contentDescription="Prathamesh"
         app:layout_constraintStart_toStartOf="@+id/icon4"
         app:layout_constraintTop_toBottomOf="@+id/icon4"
-        tools:srcCompat="@drawable/img5" />
+        tools:srcCompat="@drawable/img3" />
 
     <TextView
         android:id="@+id/name5"
@@ -211,7 +211,7 @@
         android:layout_gravity="center"
         android:layout_margin="35dp"
         android:layout_marginStart="32dp"
-        android:text="Student, Developer"
+        android:text="@string/desc2"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/icon5"
         app:layout_constraintTop_toTopOf="@+id/name5" />

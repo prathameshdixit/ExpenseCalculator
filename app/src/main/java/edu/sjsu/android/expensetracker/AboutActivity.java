@@ -25,16 +25,17 @@ public class AboutActivity extends AppCompatActivity {
         icon1.setImageResource(R.drawable.img1);
 
         ImageView icon2 = findViewById(R.id.icon2);
-        icon2.setImageResource(R.drawable.img2);
+        icon2.setImageResource(R.drawable.img3);
 
         ImageView icon3 = findViewById(R.id.icon3);
-        icon3.setImageResource(R.drawable.img3);
+        icon3.setImageResource(R.drawable.img2);
 
         ImageView icon4 = findViewById(R.id.icon4);
-        icon4.setImageResource(R.drawable.img4);
+        icon4.setImageResource(R.drawable.img3);
        
         ImageView icon5 = findViewById(R.id.icon5);
-        icon5.setImageResource(R.drawable.img5);
+        icon5.setImageResource(R.drawable.img3);
+
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);

@@ -11,6 +11,34 @@
     <string name="edit_budget">Edit Budget</string>
     <string name="title_activity_settings">Settings</string>
     <string name="theme">Theme</string>
+    <string name="historyTitle">History</string>
+    <string name="desc1">Professor</string>
+    <string name="desc2">Student, Developer</string>
+    <string name="dialogBox_categoryImage_textView">Category Image:</string>
+    <string name="no_category_in_list">Empty List</string>
+    <string name="category_list_item_name">Category</string>
+    <string name="expense_category_list_top_layout_total">Today total: 100</string>
+    <string name="expense_category_list_top_layout_items">Items : 5</string>
+    <string name="expense_category_list_top_layout_budget">Budget : 500</string>
+    <string name="expense_category_textview">category</string>
+    <string name="expense_date_textview">Date</string>
+    <string name="expense_note_textview">Note</string>
+    <string name="amount_text">Amount</string>
+    <string name="name6">The expense calculating app allows users to track and manage their expenses in a simple and intuitive way. Users can input their expenses, categorize them, and generate reports to gain insights into their spending habits. With features like automated categorization, the app streamlines the process of expense management.</string>
+    <string name="list_textview_category">Category</string>
+    <string name="list_textview_date">Date</string>
+    <string name="no_expense_textview">No Expenses</string>
+    <string name="amount_textview">amount</string>
+    <string name="categories_button">Categories</string>
+    <string name="statsTitle">Statistics</string>
+    <string name="today_list_category">Category</string>
+    <string name="today_list_budget">Budget: 100</string>
+    <string name="today_list_items_textview">Items</string>
+    <string name="daily_expenses">Daily Expenses by Category</string>
+    <string name="weekly_expenses">Weekly Expenses by Category</string>
+    <string name="header">Today\'s List Items</string>
+    <string name="item">Items:</string>
+
 
     <!-- Strings related to Settings -->
 

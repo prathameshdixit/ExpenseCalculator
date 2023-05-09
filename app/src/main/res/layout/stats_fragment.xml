@@ -13,7 +13,7 @@
 
         <TextView
             android:id="@+id/statsTitle"
-            android:text="Statistics"
+            android:text="@string/statsTitle"
             android:textSize="60dp"
             android:fontFamily="@font/roboto_bold"
             style="@style/ListWithBottomNavBar"
@@ -70,7 +70,7 @@
             <TextView
                 android:id="@+id/no_expense_textview"
                 style="@style/NoDataCaseView"
-                android:text="No Expenses"
+                android:text="@string/no_expense_textview"
                 tools:ignore="MissingConstraints" />
         </com.github.mikephil.charting.charts.HorizontalBarChart>
 

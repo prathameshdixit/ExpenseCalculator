@@ -18,7 +18,7 @@
     <TextView
         android:id="@+id/no_expense_textview"
         style="@style/NoDataCaseView"
-        android:text="No Expenses"
+        android:text="@string/no_expense_textview"
         tools:ignore="MissingConstraints" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -49,7 +49,7 @@
         <TextView
             android:id="@+id/amount_textview"
             style="@style/TextMediumHeading"
-            android:text="Amount"
+            android:text="@string/amount_textview"
             android:padding="10dp"
             app:layout_constraintLeft_toRightOf="@id/pie_chart"
             app:layout_constraintRight_toRightOf="parent"
@@ -85,7 +85,7 @@
             android:id="@+id/categories_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Categories"
+            android:text="@string/categories_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/pie_chart"

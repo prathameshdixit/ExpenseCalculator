@@ -20,7 +20,7 @@
     <TextView
         android:id="@+id/no_category_in_list"
         style="@style/NoDataCaseView"
-        android:text="@string/emptyCategoryList"
+        android:text="@string/no_category_in_list"
         tools:ignore="MissingConstraints" />
     <ListView
         android:id="@+id/all_category_list"

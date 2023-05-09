@@ -41,7 +41,7 @@
             android:layout_marginLeft="4dp"
             android:fontFamily="@font/roboto_bold"
             android:padding="10dp"
-            android:text="Today total: 100"
+            android:text="@string/expense_category_list_top_layout_total"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="@id/expense_category_list_top_layout_image"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -66,7 +66,7 @@
             android:layout_marginLeft="4dp"
             android:fontFamily="@font/roboto_bold"
             android:padding="10dp"
-            android:text="Items : 5"
+            android:text="@string/expense_category_list_top_layout_items"
             android:textSize="20sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/expense_category_list_top_layout_total" />
@@ -78,7 +78,7 @@
             android:layout_marginLeft="4dp"
             android:fontFamily="@font/roboto_bold"
             android:padding="10dp"
-            android:text="Budget : 500"
+            android:text="@string/expense_category_list_top_layout_budget"
             android:textSize="20sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/expense_category_list_top_layout_items" />

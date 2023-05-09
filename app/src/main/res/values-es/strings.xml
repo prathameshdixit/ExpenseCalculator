@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <string name="app_name">Gastos</string>
+        <string name="home">Hogar</string>
+        <string name="settings">Ajustes</string>
+        <string name="create_new_category">Crear nueva categoría</string>
+        <string name="emptyCategoryList">Lista vacía</string>
+        <string name="edit">Editar</string>
+        <string name="delete">Borrar</string>
+        <string name="stats">Estadísticas</string>
+        <string name="history">Historia</string>
+        <string name="edit_budget">Editar presupuesto</string>
+        <string name="title_activity_settings">Ajustes</string>
+        <string name="theme">Tema</string>
+        <string name="historyTitle">Historia</string>
+        <string name="desc1">profesora</string>
+        <string name="desc2">Estudiante, Desarrollador</string>
+        <string name="dialogBox_categoryImage_textView">Imagen de la categoría:</string>
+        <string name="no_category_in_list">Lista vacía</string>
+        <string name="category_list_item_name">Categoría</string>
+        <string name="expense_category_list_top_layout_total">total de hoy: 100</string>
+        <string name="expense_category_list_top_layout_items">Elementos : 5</string>
+        <string name="expense_category_list_top_layout_budget">Presupuesto : 500</string>
+        <string name="expense_category_textview">categoría</string>
+        <string name="expense_date_textview">Fecha</string>
+        <string name="expense_note_textview">Nota</string>
+        <string name="amount_text">Cantidad</string>
+        <string name="name6">La aplicación de cálculo de gastos permite a los usuarios realizar un seguimiento y administrar sus gastos de una manera simple e intuitiva. Los usuarios pueden ingresar sus gastos, categorizarlos y generar informes para obtener información sobre sus hábitos de gasto. Con funciones como la categorización automatizada, la aplicación agiliza el proceso de gestión de gastos.</string>
+        <string name="list_textview_category">Categoría</string>
+        <string name="list_textview_date">Fecha</string>
+        <string name="no_expense_textview">Sin Gastos</string>
+        <string name="amount_textview">cantidad</string>
+        <string name="categories_button">Categorías</string>
+        <string name="statsTitle">Estadísticas</string>
+        <string name="today_list_category">Categoría</string>
+        <string name="today_list_budget">Presupuesto : 100</string>
+        <string name="today_list_items_textview">Elementos</string>
+        <string name="daily_expenses">Gastos Diarios por Categoría</string>
+        <string name="weekly_expenses">Gastos Semanales por Categoría</string>
+        <string name="header">Elementos de la lista de hoy</string>
+        <string name="item">Elementos:</string>
+
+
+
+        <!-- Strings related to Settings -->
+
+        <string name="style">Estilo</string>
+        <string name="about">Acerca de</string>
+        <string name="info">Información</string>
+        <string name="help">Ayuda</string>
+        <string name="done">Hecho</string>
+        <string name="cancel">Cancelar</string>
+        <string name="categoryName">Nombre</string>
+        <string name="categoryBudget">Presupuesto</string>
+        <string name="category">Categoría</string>
+
+    </resources>

@@ -1,6 +1,8 @@
 package edu.sjsu.android.expensetracker;
 
 
+
+
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Context;
@@ -148,7 +150,7 @@ public class HomeFragment extends Fragment {
                 } else {
                     noExpense.setVisibility(View.INVISIBLE);
                 }
-                totalItems.setText("Items: " + totalItemCount);
+                totalItems.setText((R.string.item) + totalItemCount );
                 categoryListViewID.setAdapter(adapter);
             }
         }
@@ -169,7 +171,7 @@ public class HomeFragment extends Fragment {
         PieDataSet pieDataSet = new PieDataSet(amtPer, "Amount");
         pieDataSet.setValueFormatter(new PercentFormatter());
         pieChart.setTouchEnabled(false);
-        pieChart.setCenterText("Expenses");
+        pieChart.setCenterText("expenses");
         pieChart.setCenterTextSize(15f);
         pieChart.setCenterTextColor(Color.BLACK);
         pieChart.setDescription(" ");
@@ -189,7 +191,7 @@ public class HomeFragment extends Fragment {
         progressBar = getActivity().findViewById(R.id.progress_bar);
 
         TextView headerText = getActivity().findViewById(R.id.listview_header);
-        headerText.setText("Today's List Items");
+        headerText.setText(R.string.header);
 
         db = new Database(mContext);
     }
