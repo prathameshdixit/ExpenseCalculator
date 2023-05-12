@@ -35,7 +35,7 @@ public class ShowExpense extends AppCompatActivity {
     private void applyTheme() {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        int oldTheme = Integer.parseInt(sharedPreferences.getString("Theme", "0"));
+        int oldTheme = Integer.parseInt(sharedPreferences.getString(getString(R.string.theme), "0"));
         if (oldTheme == 0) {
             int themeId = R.style.LightTheme;
             setTheme(themeId);

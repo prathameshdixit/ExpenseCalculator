@@ -4,6 +4,7 @@ package edu.sjsu.android.expensetracker;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.widget.Toast;
 
 import androidx.preference.ListPreference;
@@ -38,7 +39,15 @@ public class SettingsFragment extends PreferenceFragmentCompat {
                 return false;
             }
         });
-        ListPreference mListPreference = (ListPreference) getPreferenceManager().findPreference("Theme");
+        Preference language =  findPreference(getString(R.string.language));
+        language.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                startActivity(new Intent(Settings.ACTION_LOCALE_SETTINGS));
+                return true;
+            }
+        });
+        ListPreference mListPreference = (ListPreference) getPreferenceManager().findPreference(getString(R.string.theme));
         mListPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             @Override
             public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -73,7 +82,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
     private void applyTheme() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-        oldTheme = Integer.parseInt(sharedPreferences.getString("Theme", "0"));
+        oldTheme = Integer.parseInt(sharedPreferences.getString(getString(R.string.theme), "0"));
         if (oldTheme == 0) {
             int themeId = R.style.LightTheme;
             getActivity().setTheme(themeId);

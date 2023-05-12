@@ -61,7 +61,7 @@ public class EditExpense extends AppCompatActivity {
     private void applyTheme() {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this );
-        int oldTheme = Integer.parseInt(sharedPreferences.getString("Theme","0"));
+        int oldTheme = Integer.parseInt(sharedPreferences.getString(getString(R.string.theme),"0"));
         if(oldTheme==0){
             int themeId = R.style.LightTheme;
             setTheme(themeId);
@@ -71,7 +71,7 @@ public class EditExpense extends AppCompatActivity {
             setTheme(themeId);
         }
         else {
-            Toast.makeText(this, "No theme", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.no_theme), Toast.LENGTH_SHORT).show();
         }
     }
     private void getExpenseID() {
@@ -105,7 +105,7 @@ public class EditExpense extends AppCompatActivity {
             public void onClick(View view) {
 
                 if(amountID.getText().toString().trim().isEmpty() || Double.parseDouble(amountID.getText().toString())< 1){
-                    Toast.makeText(EditExpense.this,"Cannot add zero amount",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditExpense.this,getString(R.string.invalid_amount),Toast.LENGTH_SHORT).show();
                 }
                 else{
                     double amount = Double.valueOf(amountID.getText().toString());//Amount will be stored as double

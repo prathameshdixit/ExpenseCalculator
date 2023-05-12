@@ -8,6 +8,9 @@
             android:entryValues="@array/theme_array_count"
             android:key="@string/theme"
             android:title="@string/theme" />
+        <Preference
+            android:title="@string/language"
+            android:key="@string/language"/>
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/info">
         <Preference

@@ -59,7 +59,7 @@ public class TodayListAdapter extends ArrayAdapter {
             budget.setVisibility(View.VISIBLE);
             mProgress.setVisibility(View.VISIBLE);
 
-            budget.setText("Budget: " + String.valueOf(todaysBudgetByCategory));
+            budget.setText(getContext().getString(R.string.today_list_budget) + " " + String.valueOf(todaysBudgetByCategory));
 
             mProgress.setProgress(0);  // Main Progress
             mProgress.setSecondaryProgress((todaysExpenseAmountByCategory * 100) / todaysBudgetByCategory); // Secondary Progress

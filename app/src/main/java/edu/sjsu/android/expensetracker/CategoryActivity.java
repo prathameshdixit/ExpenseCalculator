@@ -131,7 +131,7 @@ public class CategoryActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (!categoryName.getText().toString().trim().equals("")) {
                     if (db.getCategories().contains(categoryName.getText().toString())) {
-                        Toast.makeText(CategoryActivity.this, "Category already present", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CategoryActivity.this, getString(R.string.category_already_present), Toast.LENGTH_SHORT).show();
                     } else {
                         double budget;
                         if (categoryBudget.getText().toString().trim().equals("")) {
@@ -140,7 +140,7 @@ public class CategoryActivity extends AppCompatActivity {
                             budget = Double.parseDouble(categoryBudget.getText().toString());
                         }
                         if(!iconClicked){
-                            Toast.makeText(CategoryActivity.this,"Please select an Icon !", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CategoryActivity.this, getString(R.string.select_icon) ,Toast.LENGTH_SHORT).show();
                         }
                         else{
                             String iconName = getResources().getResourceEntryName(icon);
@@ -148,7 +148,7 @@ public class CategoryActivity extends AppCompatActivity {
                         }
                     }
                 } else {
-                    Toast.makeText(CategoryActivity.this, "Cannot add empty tag", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CategoryActivity.this, getString(R.string.empty_tag), Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -164,7 +164,7 @@ public class CategoryActivity extends AppCompatActivity {
         else{
             db.updateCategory(oldCategoryName,category,budget,icon);
         }
-        Toast.makeText(CategoryActivity.this, "Saved!!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(CategoryActivity.this, getString(R.string.saved), Toast.LENGTH_SHORT).show();
         onBackPressed();
     }
 
@@ -188,7 +188,7 @@ public class CategoryActivity extends AppCompatActivity {
 
     private void applyTheme() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        int oldTheme = Integer.parseInt(sharedPreferences.getString("Theme", "0"));
+        int oldTheme = Integer.parseInt(sharedPreferences.getString(getString(R.string.theme), "0"));
         if (oldTheme == 0) {
             int themeId = R.style.LightTheme;
             setTheme(themeId);

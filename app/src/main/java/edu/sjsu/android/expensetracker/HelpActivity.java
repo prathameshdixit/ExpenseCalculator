@@ -35,7 +35,7 @@ public class HelpActivity extends AppCompatActivity {
     }
     private void applyTheme() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this );
-        oldTheme = Integer.parseInt(sharedPreferences.getString("Theme","0"));
+        oldTheme = Integer.parseInt(sharedPreferences.getString(getString(R.string.theme),"0"));
         if(oldTheme==0){
             int themeId = R.style.LightTheme;
             setTheme(themeId);

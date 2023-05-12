@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
 
     private void applyTheme() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        String theme = sharedPreferences.getString("Theme", "0");
+        String theme = sharedPreferences.getString(getString(R.string.theme), "0");
         switch (theme) {
             case "0": {
                 int themeId = R.style.LightTheme;

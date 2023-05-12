@@ -50,7 +50,7 @@ public class ExpenseListByCategory extends AppCompatActivity {
     private void applyTheme() {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this );
-        int oldTheme = Integer.parseInt(sharedPreferences.getString("Theme","0"));
+        int oldTheme = Integer.parseInt(sharedPreferences.getString(getString(R.string.theme),"0"));
         if(oldTheme==0){
             int themeId = R.style.LightTheme;
             setTheme(themeId);
@@ -92,13 +92,13 @@ public class ExpenseListByCategory extends AppCompatActivity {
         }
 
         long categoryTotal = db.getTodaysExpenseAmountByCategory(category);
-        expenseListByCategoryTotal.setText("Total: "+ categoryTotal);
+        expenseListByCategoryTotal.setText(getString(R.string.expense_category_list_top_layout_total) + categoryTotal);
 
         long categoryTotalItems = db.getTodaysExpenseItemsCountByCategory(category);
-        expenseListByCategoryItems.setText("Items: "+ categoryTotalItems);
+        expenseListByCategoryItems.setText(getString(R.string.expense_category_list_top_layout_items) + categoryTotalItems);
 
         long categoryBudget = db.getBudgetByCategory(category);
-        expenseListByCategoryBudget.setText("Budget: "+ categoryBudget);
+        expenseListByCategoryBudget.setText(getString(R.string.expense_category_list_top_layout_budget) + categoryBudget);
 
 //        categoryImage.setImageResource(db.getTodaysImageByCategory(category));
 
