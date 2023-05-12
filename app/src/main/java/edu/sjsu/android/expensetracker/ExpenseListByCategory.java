@@ -92,13 +92,13 @@ public class ExpenseListByCategory extends AppCompatActivity {
         }
 
         long categoryTotal = db.getTodaysExpenseAmountByCategory(category);
-        expenseListByCategoryTotal.setText(getString(R.string.expense_category_list_top_layout_total) + categoryTotal);
+        expenseListByCategoryTotal.setText(getString(R.string.expense_category_list_top_layout_total) + " " + categoryTotal);
 
         long categoryTotalItems = db.getTodaysExpenseItemsCountByCategory(category);
-        expenseListByCategoryItems.setText(getString(R.string.expense_category_list_top_layout_items) + categoryTotalItems);
+        expenseListByCategoryItems.setText(getString(R.string.expense_category_list_top_layout_items) + " " + categoryTotalItems);
 
         long categoryBudget = db.getBudgetByCategory(category);
-        expenseListByCategoryBudget.setText(getString(R.string.expense_category_list_top_layout_budget) + categoryBudget);
+        expenseListByCategoryBudget.setText(getString(R.string.expense_category_list_top_layout_budget) + " "  + categoryBudget);
 
 //        categoryImage.setImageResource(db.getTodaysImageByCategory(category));
 

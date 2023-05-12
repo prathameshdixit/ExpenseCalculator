@@ -17,9 +17,9 @@
     <string name="dialogBox_categoryImage_textView">Category Image:</string>
     <string name="no_category_in_list">Empty List</string>
     <string name="category_list_item_name">Category</string>
-    <string name="expense_category_list_top_layout_total">Today total: 100</string>
-    <string name="expense_category_list_top_layout_items">Items : 5</string>
-    <string name="expense_category_list_top_layout_budget">Budget : 500</string>
+    <string name="expense_category_list_top_layout_total">Today total:</string>
+    <string name="expense_category_list_top_layout_items">Items:</string>
+    <string name="expense_category_list_top_layout_budget">Budget:</string>
     <string name="expense_category_textview">category</string>
     <string name="expense_date_textview">Date</string>
     <string name="expense_note_textview">Note</string>

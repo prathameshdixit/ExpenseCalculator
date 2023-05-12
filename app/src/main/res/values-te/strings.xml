@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">ఖర్చులు</string>
+    <string name="home">హోమ్</string>
+    <string name="settings">సెట్టింగులు</string>
+    <string name="create_new_category">కొత్త కేటగిరీ సృష్టించండి</string>
+    <string name="emptyCategoryList">ఖాళీ జాబితా</string>
+    <string name="edit">సవరించు</string>
+    <string name="delete">తొలగించు</string>
+    <string name="stats">సంఖ్యలు</string>
+    <string name="history">చరిత్ర</string>
+    <string name="edit_budget">బడ్జెట్ సవరించు</string>
+    <string name="title_activity_settings">సెట్టింగులు</string>
+    <string name="theme">థీమ్</string>
+    <string name="historyTitle">చరిత్ర</string>
+    <string name="desc1">ప్రొఫెసర్</string>
+    <string name="desc2">విద్యార్థి, డెవలపర్</string>
+    <string name="dialogBox_categoryImage_textView">కేటగిరీ చిత్రం:</string>
+    <string name="no_category_in_list">ఖాళీ జాబితా</string>
+    <string name="category_list_item_name">కేటగిరీ</string>
+    <string name="expense_category_list_top_layout_total">నేడు మొత్తం:</string>
+    <string name="expense_category_list_top_layout_items">అంశాలు:</string>
+    <string name="expense_category_list_top_layout_budget">బడ్జెట్:</string>
+    <string name="expense_category_textview">కేటగిరీ</string>
+    <string name="expense_date_textview">తేదీ</string>
+    <string name="expense_note_textview">గమనిక</string>
+    <string name="amount_text">మొత్తం</string>
+    <string name="name6">ఖర్చులు గణనా అనువర్తనం వినియోగదారులు సరళమైన మరియు సూక్ష్మంగా తమ ఖర్చులను ట్రాక్ చేయడానికి అవకాశం కలుగుతుంది. వాడుకరులు తమ ఖర్చులను ఎంటర్ చేయవచ్చు, వర్గీకరించవచ్చు, మరియు వివరణలను సృష్టించవచ్చు చాలా సరళంగా. ఆటోమేటెడ్ వర్గీకరణం వంటి ఫీచర్లు ఉన్నందున, అనువర్తనం ఖర్చు మేనేజ్మెంట్ ప్రక్రియను అందిస్తుంది.</string>
+    <string name="list_textview_category">వర్గం</string>
+    <string name="list_textview_date">తేదీ</string>
+    <string name="no_expense_textview">ఖర్చులు లేవు</string>
+    <string name="amount_textview">మొత్తం</string>
+    <string name="categories_button">వర్గాలు</string>
+    <string name="statsTitle">సాంకేతికంగా</string>
+    <string name="today_list_category">వర్గం</string>
+    <string name="today_list_budget">బడ్జెట్:</string>
+    <string name="today_list_items_textview">అంశాలు</string>
+    <string name="daily_expenses">డేలీ ఖర్చులు వర్గం ద్వారా</string>
+    <string name="weekly_expenses">వారపు ఖర్చులు వర్గం ద్వారా</string>
+    <string name="header">నేటి జాబితా అంశాలు</string>
+    <string name="item">అంశాలు:</string>
+
+
+    <!-- Strings related to Settings -->
+
+    <string name="style">శైలి</string>
+    <string name="about">గురించి</string>
+    <string name="info">సమాచారం</string>
+    <string name="help">సహాయం</string>
+    <string name="done">పూర్తి</string>
+    <string name="cancel">రద్దు చేయి</string>
+    <string name="categoryName">పేరు</string>
+    <string name="categoryBudget">బడ్జెట్</string>
+    <string name="category">వర్గం</string>
+    <string name="notes">గమనికలు జోడించండి</string>
+    <string name="saved">సేవ్ అవుతుంది !!!</string>
+    <string name="category_already_present">వర్గం ఇప్పటికే ఉంది</string>
+    <string name="select_icon">దయచేసి ఒక చిహ్నం ఎంచుకోండి!</string>
+    <string name="empty_tag">ఖాళీ ట్యాగ్ జోడించవద్దు</string>
+    <string name="no_theme">థీమ్ లేదు</string>
+    <string name="invalid_amount">సరే అమౌంట్ జోడించవచ్చు</string>
+    <string name="language">భాష</string>
+</resources>

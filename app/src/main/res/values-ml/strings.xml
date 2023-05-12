@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">വ്യയം</string>
+    <string name="home">ഹോം</string>
+    <string name="settings">ക്രമീകരണങ്ങൾ</string>
+    <string name="create_new_category">പുതിയ വിഭാഗം സൃഷ്ടിക്കുക</string>
+    <string name="emptyCategoryList">ശൂന്യമായ പട്ടിക</string>
+    <string name="edit">തിരുത്തുക</string>
+    <string name="delete">നീക്കം ചെയ്യുക</string>
+    <string name="stats">സ്റ്റാറ്റിസ്റ്റികൾ</string>
+    <string name="history">ചരിത്രം</string>
+    <string name="edit_budget">ബജറ്റ് തിരുത്തുക</string>
+    <string name="title_activity_settings">ക്രമീകരണങ്ങൾ</string>
+    <string name="theme">തീം</string>
+    <string name="historyTitle">ചരിത്രം</string>
+    <string name="desc1">പ്രൊഫഷണൽ</string>
+    <string name="desc2">വിദ്യാർത്ഥി, ഡെവലപ്പർ</string>
+    <string name="dialogBox_categoryImage_textView">വിഭാഗം ചിത്രം:</string>
+    <string name="no_category_in_list">ശൂന്യമായ പട്ടിക</string>
+    <string name="category_list_item_name">വിഭാഗം</string>
+    <string name="expense_category_list_top_layout_total">ഇന്നത്തെ മൊത്തം:</string>
+    <string name="expense_category_list_top_layout_items">ഇനങ്ങൾ:</string>
+    <string name="expense_category_list_top_layout_budget">ബജറ്റ്:</string>
+    <string name="expense_category_textview">വിഭാഗം</string>
+    <string name="expense_date_textview">തീയതി</string>
+    <string name="expense_note_textview">കുറിപ്പ്</string>
+    <string name="amount_text">തുക</string>
+    <string name="name6">വ്യയം കണക്കാക്കുന്ന ആപ്പ് ഉപയോക്താക്കൾക്ക് വളരെ സഹജമായിക്കുന്നതാണ്, അവർ വിഭാഗീകരിക്കാൻ കഴിയുന്നു, പിന്തുടരുന്ന അറിവുകളും വിശകലനങ്ങളും നൽകുകയും ചെയ്യുകയും ചെയ്യുന്നു. സ്വയംചാലിതമായ വിഭാഗീകരണം പോലുള്ള സവിശേഷതകൾ ഉൾപ്പെടുത്തിയാണ് അപ്പ് വ്യയ മാനേജ്മെന്റ് പ്രക്രിയ സമീപിക്കുന്നത്.</string>
+    <string name="list_textview_category">വിഭാഗം</string>
+    <string name="list_textview_date">തീയതി</string>
+    <string name="no_expense_textview">സമ്പ്രദായമില്ല</string>
+    <string name="amount_textview">തുകമുള്ളത്</string>
+    <string name="categories_button">വിഭാഗങ്ങൾ</string>
+    <string name="statsTitle">സ്റ്റാറ്റിസ്റ്റിക്കൽ</string>
+    <string name="today_list_category">വിഭാഗം</string>
+    <string name="today_list_budget">ബജറ്റ്:</string>
+    <string name="today_list_items_textview">ഇനങ്ങൾ</string>
+    <string name="daily_expenses">ദിവസ വ്യയങ്ങൾ വിഭാഗങ്ങൾ പ്രകാരം</string>
+    <string name="weekly_expenses">ആഴ്ചക്കാല വ്യയങ്ങൾ വിഭാഗങ്ങൾ പ്രകാരം</string>
+    <string name="header">ഇന്നത്തെ ലിസ്റ്റ് ഇനങ്ങൾ</string>
+    <string name="item">ഇനങ്ങൾ:</string>
+
+
+    <!-- Strings related to Settings -->
+
+    <string name="style">ശൈലി</string>
+    <string name="about">കുറിച്ച്</string>
+    <string name="info">വിവരങ്ങൾ</string>
+    <string name="help">സഹായം</string>
+    <string name="done">ചെയ്തു</string>
+    <string name="cancel">റദ്ദാക്കുക</string>
+    <string name="categoryName">പേരു</string>
+    <string name="categoryBudget">ബജറ്റ്</string>
+    <string name="category">വിഭാഗം</string>
+    <string name="notes">കുറിച്ച് ചേർക്കുക</string>
+    <string name="saved">സേവ് ചെയ്തു !!!</string>
+    <string name="category_already_present">വിഭാഗം ഇതിനകം ഉണ്ട്</string>
+    <string name="select_icon">ദയവായി ഒരു ചിഹ്നം തിരഞ്ഞെടുക്കുക!</string>
+    <string name="empty_tag">ശൂന്യമായ ടാഗ് ചേർക്കാൻ സാധ്യമല്ല</string>
+    <string name="no_theme">സംവിധാനം ഇല്ല</string>
+    <string name="invalid_amount">സംഖ്യക്ക് സമരൂപമായ തുക ചേർക്കാം അസാധുവാണ്</string>
+    <string name="language">ഭാഷ</string>
+
+</resources>
