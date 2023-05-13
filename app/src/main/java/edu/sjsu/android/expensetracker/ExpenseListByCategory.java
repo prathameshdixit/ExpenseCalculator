@@ -37,6 +37,8 @@ public class ExpenseListByCategory extends AppCompatActivity {
         createToolbar();
     }
 
+
+    // Initializing a toolbar
     private void createToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -47,6 +49,7 @@ public class ExpenseListByCategory extends AppCompatActivity {
         }
     }
 
+    // Applying theme from the preferences
     private void applyTheme() {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this );
@@ -60,7 +63,7 @@ public class ExpenseListByCategory extends AppCompatActivity {
             setTheme(themeId);
         }
         else {
-            Toast.makeText(this, "No theme", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.no_theme), Toast.LENGTH_SHORT).show();
         }
     }
     @Override
@@ -100,8 +103,6 @@ public class ExpenseListByCategory extends AppCompatActivity {
         long categoryBudget = db.getBudgetByCategory(category);
         expenseListByCategoryBudget.setText(getString(R.string.expense_category_list_top_layout_budget) + " "  + categoryBudget);
 
-//        categoryImage.setImageResource(db.getTodaysImageByCategory(category));
-
         historyListExpenseAdapter = new HistoryListAdapter(this, expenseList);
 
         expenseListView.setAdapter(historyListExpenseAdapter);
@@ -131,7 +132,6 @@ public class ExpenseListByCategory extends AppCompatActivity {
         if (item.getItemId() == android.R.id.home) {
             finish(); // close this activity and return to preview activity (if there is any)
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

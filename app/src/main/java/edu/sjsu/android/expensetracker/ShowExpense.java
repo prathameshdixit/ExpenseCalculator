@@ -32,6 +32,7 @@ public class ShowExpense extends AppCompatActivity {
         onClickListeners();
     }
 
+    // Applying theme from the preferences
     private void applyTheme() {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -43,7 +44,7 @@ public class ShowExpense extends AppCompatActivity {
             int themeId = R.style.DarkTheme;
             setTheme(themeId);
         } else {
-            Toast.makeText(this, "No theme", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.no_theme), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -53,6 +54,7 @@ public class ShowExpense extends AppCompatActivity {
         super.onResume();
     }
 
+    // ActionListeners onClick
     private void onClickListeners() {
         deleteButtonID.setOnClickListener(new View.OnClickListener() {
             @Override

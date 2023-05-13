@@ -17,6 +17,7 @@ public class HelpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         applyTheme();
+
         setContentView(R.layout.help_activity);
         ImageView icon6 = findViewById(R.id.icon6);
         icon6.setImageResource(R.drawable.img6);
@@ -24,15 +25,18 @@ public class HelpActivity extends AppCompatActivity {
         icon6.setImageResource(R.drawable.img7);
         setContentView(R.layout.help_activity);
 
-
+        // Initializing a toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle(getString(R.string.help));
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
     }
+
+    // Applying theme from the preferences
     private void applyTheme() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this );
         oldTheme = Integer.parseInt(sharedPreferences.getString(getString(R.string.theme),"0"));
@@ -45,7 +49,7 @@ public class HelpActivity extends AppCompatActivity {
             setTheme(themeId);
         }
         else {
-            Toast.makeText(this, "No theme", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.no_theme), Toast.LENGTH_SHORT).show();
         }
     }
     @Override

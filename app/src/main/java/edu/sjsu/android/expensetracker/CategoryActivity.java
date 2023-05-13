@@ -57,7 +57,6 @@ public class CategoryActivity extends AppCompatActivity {
             categoryName.setText(oldCategoryName);
             categoryBudget.setText(String.valueOf(db.getBudgetByCategory(oldCategoryName)));
             int resID = getResources().getIdentifier(db.getIconByCategory(oldCategoryName),"drawable", getPackageName());
-//            categoryImage.setImageResource(resID);
             oldCategoryName = categoryName.getText().toString();
         }
     }
@@ -68,6 +67,7 @@ public class CategoryActivity extends AppCompatActivity {
         oldCategoryName = extras.getString("category");
     }
 
+    // Initializing the toolbar
     private void createToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -78,6 +78,7 @@ public class CategoryActivity extends AppCompatActivity {
         }
     }
 
+    // ActionListeners onClick
     private void onClickListeners() {
         categoryImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,6 +155,7 @@ public class CategoryActivity extends AppCompatActivity {
         });
     }
 
+    // Save category to the DB
     private void saveCategory(String category, double budget, String icon) {
         if(isNewCategory){
 
@@ -186,6 +188,7 @@ public class CategoryActivity extends AppCompatActivity {
         categoryImage = findViewById(R.id.dialogBox_categoryImage);
     }
 
+    // Applying theme from the preferences
     private void applyTheme() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         int oldTheme = Integer.parseInt(sharedPreferences.getString(getString(R.string.theme), "0"));
@@ -196,7 +199,7 @@ public class CategoryActivity extends AppCompatActivity {
             int themeId = R.style.DarkTheme;
             setTheme(themeId);
         } else {
-            Toast.makeText(this, "No theme", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.no_theme), Toast.LENGTH_SHORT).show();
         }
     }
 

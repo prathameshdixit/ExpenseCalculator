@@ -62,5 +62,8 @@
         <string name="no_theme">Sin tema</string>
         <string name="invalid_amount">No se puede agregar un monto cero</string>
         <string name="language">Idioma</string>
+        <string name="expenses">Gastos</string>
+        <string name="cannot_edit_category">¡No se puede editar esta categoría!</string>
+        <string name="cannot_delete_category">¡No se puede eliminar esta categoría!</string>
 
 </resources>

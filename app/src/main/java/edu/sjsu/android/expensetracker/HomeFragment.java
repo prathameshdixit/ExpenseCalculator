@@ -45,14 +45,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     private Context mContext;
     private OnFragmentInteractionListener mListener;
@@ -77,13 +69,8 @@ public class HomeFragment extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment HomeFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static HomeFragment newInstance(String param1, String param2) {
         HomeFragment fragment = new HomeFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
     }
 
@@ -91,8 +78,6 @@ public class HomeFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
@@ -157,6 +142,7 @@ public class HomeFragment extends Fragment {
         new task().execute();
     }
 
+    // Get the data for the PIE Chart from the DB
     private void displayPieChart() {
 
         ArrayList<String> categories = db.getTodaysExpenseCategories();
@@ -168,10 +154,10 @@ public class HomeFragment extends Fragment {
         }
 
         PieChart pieChart = mActivity.findViewById(R.id.pie_chart);
-        PieDataSet pieDataSet = new PieDataSet(amtPer, "Amount");
+        PieDataSet pieDataSet = new PieDataSet(amtPer, getString(R.string.amount_text));
         pieDataSet.setValueFormatter(new PercentFormatter());
         pieChart.setTouchEnabled(false);
-        pieChart.setCenterText("expenses");
+        pieChart.setCenterText(getString(R.string.expenses));
         pieChart.setCenterTextSize(15f);
         pieChart.setCenterTextColor(Color.BLACK);
         pieChart.setDescription(" ");
@@ -181,6 +167,8 @@ public class HomeFragment extends Fragment {
         pieChart.setData(data);
         pieChart.animateXY(1000, 1000);
     }
+
+    // Intializing the variables with the fields in XML file
     private void setIDs() {
         fab = getActivity().findViewById(R.id.newfab);
         categoryListViewID = getActivity().findViewById(R.id.today_list);
@@ -196,6 +184,7 @@ public class HomeFragment extends Fragment {
         db = new Database(mContext);
     }
 
+    // ActionListeners onClick
     private void onClickListeners() {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -253,7 +242,6 @@ public class HomeFragment extends Fragment {
         return inflater.inflate(R.layout.home_fragment, container, false);
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
@@ -287,7 +275,6 @@ public class HomeFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
 }

@@ -19,6 +19,7 @@ public class TodayListAdapter extends ArrayAdapter {
         super(context, 0, categories);
     }
 
+    // get the data (Category list) from the DB
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 

@@ -18,6 +18,7 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
 
+        // Initializing toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(getString(R.string.settings));
         setSupportActionBar(toolbar);
@@ -30,6 +31,7 @@ public class SettingsActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.settings_fragment, new SettingsFragment()).commit();
     }
 
+    // Applying theme from the preferences
     private void applyTheme() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         int oldTheme = Integer.parseInt(sharedPreferences.getString(getString(R.string.theme), "0"));
@@ -40,10 +42,11 @@ public class SettingsActivity extends AppCompatActivity {
             int themeId = R.style.DarkTheme;
             setTheme(themeId);
         } else {
-            Toast.makeText(this, "No theme", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.no_theme), Toast.LENGTH_SHORT).show();
         }
     }
 
+    // Change theme
     public void changeTheme(int newTheme) {
         if (newTheme == 0) {
             int themeId = R.style.LightTheme;

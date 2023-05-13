@@ -62,7 +62,7 @@ public class AboutActivity extends AppCompatActivity {
             setTheme(themeId);
         }
         else {
-            Toast.makeText(this, "No theme", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.no_theme), Toast.LENGTH_SHORT).show();
         }
     }
     @Override

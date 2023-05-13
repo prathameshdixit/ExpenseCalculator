@@ -59,4 +59,7 @@
     <string name="no_theme">No theme</string>
     <string name="invalid_amount">Cannot add zero amount</string>
     <string name="language">Language</string>
+    <string name="expenses">Expenses</string>
+    <string name="cannot_edit_category">Cannot edit this category!</string>
+    <string name="cannot_delete_category">Cannot delete this category!</string>
 </resources>

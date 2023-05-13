@@ -59,5 +59,8 @@
     <string name="no_theme">സംവിധാനം ഇല്ല</string>
     <string name="invalid_amount">സംഖ്യക്ക് സമരൂപമായ തുക ചേർക്കാം അസാധുവാണ്</string>
     <string name="language">ഭാഷ</string>
+    <string name="expenses">ചെലവുകൾ</string>
+    <string name="cannot_edit_category">ഈ വിഭാഗം എഡിറ്റ് ചെയ്യാൻ കഴിയില്ല!</string>
+    <string name="cannot_delete_category">ഈ വിഭാഗം ഇല്ലാതാക്കാൻ കഴിയില്ല!</string>
 
 </resources>

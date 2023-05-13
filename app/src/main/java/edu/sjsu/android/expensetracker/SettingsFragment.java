@@ -21,8 +21,10 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         super.onCreate(savedInstanceState);
         applyTheme();
 
+        // Getting menu from XML file
         addPreferencesFromResource(R.xml.pref_main);
 
+        // Action Listeners
         Preference about = findPreference(getString(R.string.about));
         about.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
@@ -80,6 +82,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
     }
 
+    // Applying theme from the preferences
     private void applyTheme() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
         oldTheme = Integer.parseInt(sharedPreferences.getString(getString(R.string.theme), "0"));
@@ -90,7 +93,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
             int themeId = R.style.DarkTheme;
             getActivity().setTheme(themeId);
         } else {
-            Toast.makeText(getContext(), "No theme", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), getString(R.string.no_theme), Toast.LENGTH_SHORT).show();
         }
     }
 

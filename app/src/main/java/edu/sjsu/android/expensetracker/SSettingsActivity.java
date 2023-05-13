@@ -21,6 +21,7 @@ public class SSettingsActivity extends AppCompatPreferenceActivity {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.pref_main);
 
+        // Adding the toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
@@ -29,6 +30,8 @@ public class SSettingsActivity extends AppCompatPreferenceActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
+
+        // Action Listeners on click
         Preference about = findPreference(getString(R.string.about));
         about.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
@@ -48,6 +51,7 @@ public class SSettingsActivity extends AppCompatPreferenceActivity {
         bindPreferenceSummaryToValue(findPreference(getString(R.string.theme)));
     }
 
+    // Applying theme from the preferences
     private void applyTheme() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         oldTheme = Integer.parseInt(sharedPreferences.getString(getString(R.string.theme), "0"));
@@ -58,10 +62,11 @@ public class SSettingsActivity extends AppCompatPreferenceActivity {
             int themeId = R.style.DarkTheme;
             setTheme(themeId);
         } else {
-            Toast.makeText(this, "No theme", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.no_theme), Toast.LENGTH_SHORT).show();
         }
     }
 
+    // Change the theme
     public void changeTheme() {
         if (newTheme == 0) {
             int themeId = R.style.LightTheme;
@@ -70,7 +75,7 @@ public class SSettingsActivity extends AppCompatPreferenceActivity {
             int themeId = R.style.DarkTheme;
             setTheme(themeId);
         } else {
-            Toast.makeText(this, "No theme", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.no_theme), Toast.LENGTH_SHORT).show();
         }
         themeChanged = true;
         recreate();
@@ -91,6 +96,7 @@ public class SSettingsActivity extends AppCompatPreferenceActivity {
                         .getString(preference.getKey(), ""));
     }
 
+    // Listening to preference change
     private Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
         @Override
         public boolean onPreferenceChange(Preference preference, Object newValue) {

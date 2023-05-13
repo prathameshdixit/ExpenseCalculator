@@ -59,6 +59,7 @@ public class CategoryList extends AppCompatActivity {
         onClickListeners();
     }
 
+    // Initializing the toolbar
     private void createToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -69,6 +70,8 @@ public class CategoryList extends AppCompatActivity {
         }
     }
 
+
+    // Applying the theme from preferences
     private void applyTheme() {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -80,7 +83,7 @@ public class CategoryList extends AppCompatActivity {
             int themeId = R.style.DarkTheme;
             setTheme(themeId);
         } else {
-            Toast.makeText(this, "No theme", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.no_theme), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -162,7 +165,7 @@ public class CategoryList extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.edit_category:
                 if (category.equals("others")) {
-                    Toast.makeText(this, "Cannot edit this category!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getString(R.string.cannot_edit_category), Toast.LENGTH_SHORT).show();
                 } else {
                     Intent categoryActivity = new Intent(CategoryList.this, CategoryActivity.class);
                     categoryActivity.putExtra("category",category);
@@ -173,7 +176,7 @@ public class CategoryList extends AppCompatActivity {
                 return true;
             case R.id.delete_category:
                 if (category.equals("others")) {
-                    Toast.makeText(this, "Cannot delete this category!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getString(R.string.cannot_delete_category), Toast.LENGTH_SHORT).show();
                 } else {
                     db.deleteCategory(category);
                     displayList();

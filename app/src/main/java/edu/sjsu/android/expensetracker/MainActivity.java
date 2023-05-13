@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
         applyTheme();
 
         setContentView(R.layout.main_activity);
+
+        // Initializing bottom navbar
         makeBottomNavBar();
 
 
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
         }
     }
 
+    // Applying theme from the preferences
     private void applyTheme() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         String theme = sharedPreferences.getString(getString(R.string.theme), "0");
@@ -62,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
                 break;
             }
             default:
-                Toast.makeText(this, "No theme", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.no_theme), Toast.LENGTH_SHORT).show();
                 break;
         }
 
@@ -79,19 +82,10 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
 
         System.out.println(selectedItemId);
 
-//        if (selectedItemId ) {
-//            manager.beginTransaction().replace(R.id.frame_layout, new HomeFragment()).commit();
-//
-//        }
-
-//        manager.beginTransaction().replace(R.id.frame_layout, new HomeFragment()).commit();
-
 
         System.out.println(selectedItemId);
 
         boolean x = navigate(selectedItemId);
-
-//        manager.beginTransaction().replace(R.id.frame_layout, new HomeFragment()).commit();
 
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -101,6 +95,7 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
         });
     }
 
+    // Navigate to other components
     public boolean navigate(int itemId) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         Fragment currentFragment = manager.findFragmentById(R.id.frame_layout);
@@ -127,14 +122,14 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
 
         if (selectedFragment != null) {
             if (currentFragment != null && currentFragment.getClass().equals(selectedFragment.getClass())) {
-                // Reload fragment if it is already displayed
+                // Reloading fragment if it is already displayed
                 manager.beginTransaction().detach(currentFragment).attach(currentFragment).commit();
             } else {
-                // Replace fragment
+                // Replacing fragment
                 manager.beginTransaction().replace(R.id.frame_layout, selectedFragment).commit();
             }
 
-            // Save the ID of the selected item in SharedPreferences
+            // Saving the ID of the selected item in SharedPreferences
             preferences.edit().putInt("selectedItemId", itemId).apply();
         }
 

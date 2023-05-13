@@ -59,4 +59,7 @@
     <string name="no_theme">థీమ్ లేదు</string>
     <string name="invalid_amount">సరే అమౌంట్ జోడించవచ్చు</string>
     <string name="language">భాష</string>
+    <string name="expenses">ఖర్చులు</string>
+    <string name="cannot_edit_category">ఈ వర్గాన్ని సవరించలేరు!</string>
+    <string name="cannot_delete_category">ఈ వర్గాన్ని తొలగించలేరు!</string>
 </resources>

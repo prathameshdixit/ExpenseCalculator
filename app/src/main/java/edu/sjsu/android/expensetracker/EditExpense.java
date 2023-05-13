@@ -58,6 +58,7 @@ public class EditExpense extends AppCompatActivity {
         onClickListeners();
     }
 
+    // Applying theme from the preferences
     private void applyTheme() {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this );
@@ -93,6 +94,8 @@ public class EditExpense extends AppCompatActivity {
             noteID.setText(expense.getmNote());
         }
     }
+
+    // ActionListeners onClick
     private void onClickListeners() {
         closeButtonID.setOnClickListener(new View.OnClickListener() {
             @Override

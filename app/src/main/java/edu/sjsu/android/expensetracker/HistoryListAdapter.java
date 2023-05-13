@@ -22,6 +22,7 @@ public class HistoryListAdapter extends ArrayAdapter<ExpenseClass> {
         // Get the data item for this position
         ExpenseClass expense =  getItem(position);
         Database db = new Database(this.getContext());
+
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.history_expense_list_item, parent, false);
@@ -36,14 +37,14 @@ public class HistoryListAdapter extends ArrayAdapter<ExpenseClass> {
 
         if(expense.getmCategory().equals("others")){
             iconView.setImageResource(R.drawable.category_others);
-        }
-        else{
+        } else {
             iconView.setImageResource(resID);
         }
 
         amount.setText(String.valueOf(expense.getmAmount()));
         category.setText(expense.getmCategory());
         date.setText(expense.getmDate());
+
         // Return the completed view to render on screen
         return convertView;
     }
