@@ -314,7 +314,7 @@ public class Database extends SQLiteOpenHelper {
         // Select All Query
         String selectQuery = "SELECT DISTINCT " + COLUMN_CATEGORY_ID + " FROM "
                 + TABLE_NAME + " WHERE " + " date (" + COLUMN_TIMESTAMP
-                + ") = " + " date('now')" +
+                + ") = " + " date('now','localtime')" +
                 " ORDER BY " + COLUMN_TIMESTAMP + " DESC;";
 
         SQLiteDatabase db = this.getReadableDatabase();
@@ -519,7 +519,7 @@ public class Database extends SQLiteOpenHelper {
         // Select All Query
         String selectQuery = "SELECT " + " SUM(" + COLUMN_AMOUNT + ") as TOTAL FROM "
                 + TABLE_NAME + " WHERE " + " date (" + COLUMN_TIMESTAMP +
-                ") = " + " date('now')" + "AND "
+                ") = " + " date('now','localtime')" + "AND "
                 + COLUMN_CATEGORY_ID + " = '" + getCategoryID(category) + "';";
 
         SQLiteDatabase db = this.getReadableDatabase();
