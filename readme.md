@@ -3,11 +3,11 @@ The APK file for this Android project can be found in the "app" folder of the pr
 
 # Backlog
 
-The link for the backlog sheet is as follows: https://docs.google.com/spreadsheets/d/15xM2d-TmP9x-yuhZadi9w0GUTB_uQ7MGmeyIuRoGUoM/edit?usp=sharing
+The link for the backlog sheet is as follows: <a href="https://docs.google.com/spreadsheets/d/15xM2d-TmP9x-yuhZadi9w0GUTB_uQ7MGmeyIuRoGUoM/edit?usp=sharing">Click Here</a>
 
 # Final Report
 
-The final report for this Android project can be found in the root folder of the project directory. The report file is named "report.pdf" There is also a demo video for our project and refer this link for the usage of our application: https://drive.google.com/file/d/1kIEIKmIjhUawVr7L7r2FK2-1WNNDSscd/view?usp=share_link
+The final report for this Android project can be found in the root folder of the project directory. The report file is named "report.pdf" or <a href="https://bitbucket.org/cs175-likhith-nemani/expensetracker/src/master/report.pdf">Click Here</a>. There is also a demo video for our project and refer this link for the usage of our application: <a href="https://drive.google.com/file/d/1kIEIKmIjhUawVr7L7r2FK2-1WNNDSscd/view?usp=share_link">Click Here</a>
 
 # Installation
 
