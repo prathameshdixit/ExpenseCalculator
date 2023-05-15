@@ -1,5 +1,5 @@
 # APK Location 
-The APK file for this Android project can be found in the "app" folder of the project directory or <a href="https://bitbucket.org/cs175-likhith-nemani/expensetracker/src/master/app/apk/debug/app-debug.apk">Click Here</a>. The APK file is named "app-release.apk".
+The APK file for this Android project can be found in the "app" folder of the project directory or <a href="https://bitbucket.org/cs175-likhith-nemani/expensetracker/src/master/app/apk/debug/app-debug.apk">Click Here</a>. The APK file is named "app-debug.apk".
 
 # Backlog
 
