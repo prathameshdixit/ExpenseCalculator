@@ -1,5 +1,5 @@
 # APK Location 
-The APK file for this Android project can be found in the "app" folder of the project directory or <a href="https://bitbucket.org/cs175-likhith-nemani/expensetracker/src/master/app/apk/debug/app-debug.apk">Click Here</a>. The APK file is named "app-release.apk".
+The APK file for this Android project can be found in the "app" folder of the project directory or <a href="https://bitbucket.org/cs175-likhith-nemani/expensetracker/src/master/app/apk/debug/app-debug.apk">Click Here</a>. The APK file is named "app-debug.apk".
 
 # Backlog
 
@@ -7,7 +7,7 @@ The link for the backlog sheet is as follows: <a href="https://docs.google.com/s
 
 # Final Report
 
-The final report for this Android project can be found in the root folder of the project directory. The report file is named "report.pdf" or <a href="https://bitbucket.org/cs175-likhith-nemani/expensetracker/src/master/report.pdf">Click Here</a>. There is also a demo video for our project and refer this link for the usage of our application: <a href="https://drive.google.com/file/d/1kIEIKmIjhUawVr7L7r2FK2-1WNNDSscd/view?usp=share_link">Click Here</a>
+The final report for this Android project can be found in the root folder of the project directory. The report file is named "report.pdf" or <a href="https://bitbucket.org/cs175-likhith-nemani/expensetracker/src/master/report.pdf">Click Here</a>. There is also a demo video for our project and refer this link for the usage of our application: <a href="https://drive.google.com/drive/folders/1AwykxzcFjggZzS0w6hT9Cjf_jnmhzM7D?usp=sharing">Click Here</a>
 
 # Installation
 
